@@ -1,0 +1,61 @@
+IN ax ;считаем коэффициенты
+IN bx
+IN cx
+PUSHR bx
+POW 2
+POPR dx
+PUSHR ax
+PUSHR cx
+MUL
+PUSH -4
+MUL
+PUSHR dx
+ADD
+POPR dx ;получили дискриминант
+PUSHR dx
+SPACE
+JB :0 0
+JE :1 0
+JA :2 0
+END
+:0
+PUSH -100500
+OUT
+END
+:1
+PUSHR ax
+PUSH 2
+MUL
+PUSHR bx
+PUSH -1
+MUL
+DIV
+OUT
+END
+:2
+PUSHR ax
+PUSH 2
+MUL
+PUSHR bx
+PUSH -1
+MUL
+PUSHR dx
+SQRT
+ADD
+DIV
+OUT
+CLEAR
+PUSHR ax
+PUSH 2
+MUL
+PUSHR bx
+PUSH -1
+MUL
+PUSHR dx
+SQRT
+PUSH -1
+MUL
+ADD
+DIV
+OUT
+END 

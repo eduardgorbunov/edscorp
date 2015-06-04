@@ -1,0 +1,17 @@
+PUSH 5 ;lol
+:0
+CALL :1
+JBE :0 6
+END
+:1
+POPR ax
+PUSHR ax ;oh lol
+OUT
+COS
+POPR bx
+OUTR bx
+SPACE
+PUSHR ax
+PUSH 0.1
+ADD
+RET
