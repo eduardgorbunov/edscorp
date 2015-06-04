@@ -1,0 +1,31 @@
+IN ax
+PUSH 1
+POPR bx
+PUSH 1
+POPR cx
+PUSH 3
+POPR dx
+:0
+PUSHR dx
+PUSHR ax
+JBES :1
+JMP :2
+:1
+PUSHR dx
+PUSH 1
+ADD
+POPR dx
+PUSHR bx
+PUSHR cx
+ADD
+POPR cx
+PUSHR cx
+PUSHR bx
+PUSH -1
+MUL
+ADD
+POPR bx
+JMP :0
+:2
+OUTR cx
+END
