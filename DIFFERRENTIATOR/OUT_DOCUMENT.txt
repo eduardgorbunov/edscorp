@@ -1,0 +1,81 @@
+\documentclass{article}
+%\usepackage[pdftex]{graphicx}
+% Comment the following line to NOT allow the usage of umlauts
+\usepackage[T2A]{fontenc}
+\usepackage[cp1251]{inputenc}
+\usepackage[russian]{babel}
+%\usepackage[a5paper, total={4in, 7in}]{geometry}
+%\usepackage[a4paper]{geometry}
+\usepackage{cmap}
+\usepackage{units}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+
+\pagestyle{empty}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\fancyhead[RO]{\bfseries \rightmark}
+\fancyhead[LE]{\bfseries \rightmark}
+\fancyhead[LO, RE]{МОСКВОСКИЙ ФИЗИКО-ТЕХНИЧЕСКИЙ ИНСТИТУТ (ГУ)}
+\fancyfoot[R]{\today}
+%For multipage documents only!
+%\fancyfoot[L]{page: \thepage}
+%Uncomment this for 1-page sheets
+\fancyfoot[L]{\textit{Горбунов Эдуард Александрович}}
+\fancyfoot[C]{}
+
+\pagestyle{fancy}
+
+\renewcommand{\baselinestretch}{1.0}
+\renewcommand\normalsize{\sloppypar}
+
+\setlength{\topmargin}{-0.5in}
+\setlength{\textheight}{9.1in}
+\setlength{\oddsidemargin}{-0.3in}
+\setlength{\evensidemargin}{-0.3in}
+\setlength{\textwidth}{7in}
+\setlength{\parindent}{0ex}
+\setlength{\parskip}{1ex}
+
+\newcommand{\StirF}[2]{\left[ \begin{array}{c} #1 \\ #2 \end{array} \right] }
+\newcommand{\StirS}[2]{\left\{ \begin{array}{c} #1 \\ #2 \end{array} \right\} }
+\newcommand{\Bin}[2]{\left( \begin{array}{c} #1 \\ #2 \end{array} \right) }
+
+% Start the document
+\begin{document}
+
+\begin{center}
+	\textbf{Дифференцирование в современной математике}
+\end{center}
+
+Займёмся задачей о нахождении частной производной следующей математической функции.
+
+$y = \ln(\sin(bx)+(18 \cdot ax) \cdot bx)+19 \cdot bx+\sin(2)$
+
+Переменная дифференцирования есть bx.
+
+Путём тривиальных преобразований получаем
+
+$y = \ln(\sin(bx)+(18 \cdot ax) \cdot bx)+19 \cdot bx+0.909297$
+
+Нетрудно заметить, что эта математическая функция эквивалентна следующей
+
+$y = \ln(\sin(bx)+(18 \cdot ax) \cdot bx)+19 \cdot bx+0.909297$
+
+Перейдём к основной части нашей работы.
+
+Путём элементарных вычислений получаем, что
+
+$y^{'} = ( \frac {1}{\sin(bx)+(18 \cdot ax) \cdot bx} ) \cdot (\cos(bx)+18 \cdot ax)+19$
+
+Путём тривиальных преобразований получаем
+
+$y^{'} = ( \frac {1}{\sin(bx)+(18 \cdot ax) \cdot bx} ) \cdot (\cos(bx)+18 \cdot ax)+19$
+
+Итак, производная исходной функции есть
+
+$\boxed{y^{'} = ( \frac {1}{\sin(bx)+(18 \cdot ax) \cdot bx} ) \cdot (\cos(bx)+18 \cdot ax)+19}$
+
+\end{document}

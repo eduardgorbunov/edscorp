@@ -1,0 +1,1 @@
+bx LOG(SIN(bx)+    18*ax*bx) + 19*bx + SIN(2)
