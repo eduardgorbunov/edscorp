@@ -1,0 +1,29 @@
+IN ax ;номер числа Фибоначчи
+PUSHR ax
+CALL :0 ;вызов рекурсивной функции
+OUT
+END
+:0
+JE :1 1 ;особые случаи
+JE :2 2
+JB :3 1
+PUSH -1
+ADD
+DUP
+PUSH -1
+ADD
+CALL :0
+SWAP
+CALL :0
+ADD
+RET
+:1
+RET
+:2
+POPR bx
+PUSH 1
+RET
+:3
+PUSH -100500
+OUT
+END
