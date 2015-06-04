@@ -1,0 +1,17 @@
+PUSH 1
+:0
+CALL :1
+JBE :0 2.7
+END
+:1
+POPR ax
+PUSHR ax
+OUT
+LOG
+POPR bx
+OUTR bx
+SPACE
+PUSHR ax
+PUSH 0.1
+ADD
+RET
