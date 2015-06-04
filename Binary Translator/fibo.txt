@@ -1,0 +1,47 @@
+IN cx		;номер искомого числа Фибоначчи
+PUSHR cx
+JE first_number 1
+JE second_number 2
+JB wrong_number 1
+POPR cx
+PUSH 1		;начинаем со второго числа
+POPR dx
+PUSH 2		;номер текущего числа Фибоначчи
+PUSH 1		;предыдущее число
+:searching
+PUSHR dx	;текущее число
+SWAP 		;переставили его с предыдущим
+POPR dx		;получили предыдущее в dx
+DUP 		;продублировали текущее число в стеке
+PUSHR dx	;положили в стек предыдущее число
+ADD 		;на вершине стека - новое число
+POPR dx		;сохраняем его в dx
+SWAP 		;на вершине - номер предыдущего по отношению к новому числу
+PUSH 1
+ADD  		;на вершине - номер нового числа
+PUSHR cx	;на вершине - номер искомого числа
+JAS below
+POPR cx		;извлекаем обратно номер искомого числа
+POPR cx		;извлекаем номер текущего числа = номеру искомого числа
+POPR cx		;извлекаем старое число
+PUSHR dx	;кладём в стек новое число
+JMP the_end
+:below
+POPR cx		;извлекаем обратно номер искомого числа
+SWAP 		;на вершине - предыдущее число по отношению к новому
+JMP searching
+:first_number
+POPR cx
+PUSH 1
+JMP the_end
+:second_number
+POPR cx
+PUSH 1
+JMP the_end
+:wrong_number
+POPR cx
+PUSH -1
+:the_end
+OUT
+POPR cx
+END

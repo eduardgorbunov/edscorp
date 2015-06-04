@@ -1,0 +1,7 @@
+IN cx
+PUSHR cx
+DUP
+MUL
+OUT
+POPR cx
+END

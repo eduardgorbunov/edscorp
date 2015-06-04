@@ -1,0 +1,19 @@
+IN cx	;факториал этого числа будет подсчитан
+PUSHR cx
+PUSH 1
+DUP
+POPR dx
+:multiply
+JAES the_end
+PUSH 1
+ADD
+DUP
+PUSHR dx
+MUL
+POPR dx
+JMP multiply
+:the_end
+POPR cx
+POPR cx
+OUTR dx
+END
